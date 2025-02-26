@@ -16,7 +16,7 @@ contract SafeGuardTest is Test {
 
   function setUp() public {
     // fork mainnet
-    vm.createSelectFork("https://bsc.nodereal.io", 43797673);
+    vm.createSelectFork(vm.envString("BSC_RPC"), 43797673);
 
     safeGuard = new SafeGuard(manager);
     assertEq(safeGuard.manager(), manager);
